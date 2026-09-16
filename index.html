@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEL — Life Simplified</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wel: {
+              cyan: "#27c9d9",
+              blue: "#1586e8",
+              purple: "#7448ed",
+              ink: "#30445b",
+              pale: "#f4f7ff",
+            },
+          },
+          boxShadow: {
+            card: "0 14px 35px rgba(92, 112, 170, .16)",
+            soft: "0 8px 25px rgba(95, 115, 175, .13)",
+          },
+          fontFamily: {
+            outfit: ["Outfit", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+</head>
+
+<body class="min-h-screen">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 h-[85px] border-b border-slate-200/70 bg-white">
+    <div class="mx-auto flex h-full max-w-[1200px] items-center px-5 lg:px-0">
+      <!-- Logo -->
+      <a href="index.html" class="flex shrink-0 items-center">
+        <img src="assets/Logo_top.png" alt="WorkenLive - Life Simplified" class="w-[190px] object-contain" />
+      </a>
+
+      <!-- Navigation -->
+      <nav class="ml-[115px] hidden items-center gap-[55px] md:flex">
+        <!-- Product -->
+        <div class="group relative">
+          <button type="button"
+            class="flex items-center gap-2 py-7 text-[13px] font-bold uppercase tracking-wide text-slate-700 transition hover:text-purple-600">
+            Product
+
+            <span class="text-[12px] transition-transform duration-200 group-hover:rotate-180">
+              <img src="assets/dropdown_arrow.png" alt="Arrow" class="w-[18px] object-contain" />
+
+            </span>
+          </button>
+
+          <!-- Product Dropdown -->
+          <div
+            class="invisible absolute left-0 top-[68px] w-48 translate-y-2 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <a href="wel-enterprise.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Wel Enterprise
+            </a>
+
+            <a href="wel-connect.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Wel Connect
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="group relative">
+          <button type="button"
+            class="flex items-center gap-2 py-7 text-[13px] font-bold uppercase tracking-wide text-slate-700 transition hover:text-purple-600">
+            Services
+
+            <span class="text-[12px] transition-transform duration-200 group-hover:rotate-180">
+              <img src="assets/dropdown_arrow.png" alt="Arrow" class="w-[18px] object-contain" />
+            </span>
+          </button>
+
+          <!-- Services Dropdown -->
+          <div
+            class="invisible absolute left-0 top-[68px] w-48 translate-y-2 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <a href="consulting.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Consulting
+            </a>
+
+            <a href="automation.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Automation
+            </a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="group relative">
+          <button type="button"
+            class="flex items-center gap-2 py-7 text-[13px] font-bold uppercase tracking-wide text-slate-700 transition hover:text-purple-600">
+            Resources
+
+            <span class="text-[12px] transition-transform duration-200 group-hover:rotate-180">
+              <img src="assets/dropdown_arrow.png" alt="Arrow" class="w-[18px] object-contain" />
+            </span>
+          </button>
+
+          <!-- Resources Dropdown -->
+          <div
+            class="invisible absolute left-0 top-[68px] w-48 translate-y-2 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <a href="blogs.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Blogs
+            </a>
+
+            <a href="case-study.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Case Study
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right side -->
+      <div class="ml-auto flex items-center">
+        <!-- Login -->
+        <!-- Login Dropdown -->
+        <div class="group relative">
+          <button id="loginBtn" type="button"
+            class="rounded-md bg-gradient-to-r from-[#6349f5] to-[#0ecbe0] px-[42px] py-[14px] text-[12px] font-bold uppercase tracking-wide text-white shadow-sm">
+            Login
+          </button>
+
+          <!-- Login Dropdown -->
+          <div
+            class="invisible absolute right-0 top-[55px] w-52 translate-y-2 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <a href="#""
+             onclick=" alert('Coming Soon!'); return false;"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Enterprise Login
+            </a>
+
+            <a href="https://welconnect.workenlive.me/account/login" target="_blank"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Individual Login
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <button id="menuBtn" type="button" class="ml-3 rounded-lg border border-slate-200 p-2 text-slate-600 md:hidden"
+          aria-label="Open menu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden border-t border-slate-100 bg-white px-5 py-4 md:hidden">
+      <!-- Product -->
+      <div class="mobile-dropdown">
+        <input type="checkbox" id="mobileProduct" class="mobile-dropdown-check" />
+
+        <label for="mobileProduct" class="mobile-dropdown-label">
+          <span>Product</span>
+          <img src="assets/dropdown_arrow.png" alt="" class="mobile-dropdown-arrow" />
+        </label>
+        <div class="mobile-dropdown-content">
+          <a href="wel-enterprise.html">
+            Wel enterprise
+          </a>
+          <a href="wel-connect.html">
+            Wel Connect
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Services -->
+      <div class="mobile-dropdown">
+        <input type="checkbox" id="mobileServices" class="mobile-dropdown-check" />
+
+        <label for="mobileServices" class="mobile-dropdown-label">
+          <span>Services</span>
+
+          <img src="assets/dropdown_arrow.png" alt="" class="mobile-dropdown-arrow" />
+        </label>
+
+        <div class="mobile-dropdown-content">
+          <a href="consulting.html">
+            Consulting
+          </a>
+
+          <a href="automation.html">
+            Automation
+          </a>
+        </div>
+      </div>
+
+      <!-- Resources -->
+      <div class="mobile-dropdown">
+        <input type="checkbox" id="mobileResources" class="mobile-dropdown-check" />
+
+        <label for="mobileResources" class="mobile-dropdown-label">
+          <span>Resources</span>
+
+          <img src="assets/dropdown_arrow.png" alt="" class="mobile-dropdown-arrow" />
+        </label>
+
+        <div class="mobile-dropdown-content">
+          <a href="blogs.html">
+            Blogs
+          </a>
+
+          <a href="case-study.html">
+            Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-[1300px] space-y-6 px-4 py-5 sm:px-6 lg:px-0 lg:py-7">
+    <!-- Hero -->
+    <section class="mt-6 rounded-2xl bg-white">
+      <div class="hero-card mx-auto max-w-[1300px] px-6 py-8">
+        <div class="grid items-center gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+          <!-- =================================================
+             LEFT CONTENT
+        ================================================== -->
+
+          <div>
+            <h1
+              class="text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-[61px] lg:leading-[1.15]">
+              <span class="text-gradient">Looking for Bigtech Efficiency</span>
+
+              <span class="text-slate-700">with small</span>
+
+              <span class="text-slate-700">business simplicity?</span>
+            </h1>
+
+            <p class="mt-4 text-[20px] font-normal leading-[1.5] text-[var(--text-color)]">
+              You don’t need multiple apps or traditional software. You need a unified ecosystem
+            </p>
+
+            <p class="mt-4 text-[20px] font-normal leading-[1.5] text-[var(--text-color)]">
+              WorkenLive for Enterprise adapts to your industry, automates your manual work, and unites your data in one
+              beautiful interface.
+            </p>
+
+            <p class="mt-4 text-[20px] font-normal leading-[1.5] text-[var(--text-color)]">
+              Powerful, unified data infrastructure with an intuitive employee experience that scales seamlessly and
+              sets up your team to run with zero friction
+            </p>
+
+            <p class="mt-2 max-w-lg text-xl font-medium leading-[1.2] text-purple-500 pb-3">
+              Scale Your Output, Not Your Overhead
+            </p>
+          </div>
+
+          <!-- =================================================
+             RIGHT ANIMATION
+        ================================================== -->
+
+          <div class="flex w-full items-center justify-center">
+            <div class="hero-visual">
+              <!-- =================================================
+                 PERSON - FIRST
+            ================================================== -->
+
+              <img class="hero-person" src="assets/client.png" alt="Business professional using a laptop" />
+
+              <!-- =================================================
+                 BADGES
+            ================================================== -->
+
+              <img class="hero-badge badge-reduced" src="assets/RO.png" alt="Reduced Operation Cost" />
+
+              <img class="hero-badge badge-problem" src="assets/PS.png" alt="Problem Solver" />
+
+              <img class="hero-badge badge-enterprise" src="assets/EW.png" alt="Enterprise People Automation" />
+
+              <img class="hero-badge badge-setup" src="assets/SM.png" alt="Setup in Minutes" />
+
+              <img class="hero-badge badge-digital" src="assets/DW.png" alt="Digital Workplace" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section id="modules"
+      class="bg-[var(--color-bg)] section-card rounded-2xl modules-section rounded-2xl px-6 py-8 sm:px-10 lg:px-11 lg:py-9">
+      <!-- Section Label -->
+      <div
+        class="section-label modules-label mb-6 flex h-[36px] shrink-0 items-center justify-center gap-1 text-2xl font-medium text-sky-500">
+        <img src="assets/separator-left.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+
+        <span class="shrink-0 whitespace-nowrap">
+          Modules &amp; Features
+        </span>
+
+        <img src="assets/separator-right.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+      </div>
+
+      <div class="modules-grid grid items-start gap-8 lg:grid-cols-[1fr_1.05fr]">
+        <!-- Video -->
+        <div class="gradient-bg rounded-2xl p-6 shadow-lg sm:p-7">
+          <div class="relative mx-auto w-full overflow-hidden rounded-lg bg-slate-900 shadow-inner">
+
+            <iframe src="https://www.youtube.com/embed/Dq0dZn2Vej4" title="WorkenLive Promo video"
+              class="block h-[520px] w-full border-0 sm:h-[560px] md:h-[580px] lg:h-[600px]"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Content + Accordion -->
+        <div class="min-w-0">
+          <h2 class="text-2xl font-medium leading-tight sm:text-4xl">
+            Explore Our Comprehensive<br class="hidden sm:block" />
+            Modules &amp; Powerful Features.
+          </h2>
+
+          <p class="mt-2 text-sm leading-5 text-slate-600">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever type sheets.
+          </p>
+
+          <div id="features" class="mt-5 space-y-2">
+            <!-- TASO -->
+            <div class="feature-item">
+              <button type="button" class="feature-toggle" aria-expanded="false">
+                <span class="feature-symbol">
+                  <img src="assets/taso_icon.png" alt="" class="h-auto w-[55px] shrink-0 object-contain" />
+                </span>
+                <span class="feature-title">TASO (Talent Planning, Acquisition &amp; Smart Onboarding)</span>
+                <span class="feature-icon">+</span>
+              </button>
+              <div class="feature-content">
+                Talent planning, acquisition and smart onboarding helps organizations
+                attract the right talent and create a smoother onboarding experience.
+              </div>
+            </div>
+
+            <!-- EE -->
+            <div class="feature-item">
+              <button type="button" class="feature-toggle" aria-expanded="false">
+                <span class="feature-symbol">
+                  <img src="assets/ee_icon.png" alt="" class="h-auto w-[55px] shrink-0 object-contain" />
+                </span>
+                <span class="feature-title">EE (Employee Essential, a Centralized Employee Management)</span>
+                <span class="feature-icon">+</span>
+              </button>
+              <div class="feature-content">
+                Centralized employee management provides a simpler way to manage
+                employee information and everyday people operations.
+              </div>
+            </div>
+
+            <!-- Payroll -->
+            <div class="feature-item">
+              <button type="button" class="feature-toggle" aria-expanded="false">
+                <span class="feature-symbol">
+                  <img src="assets/payroll_icon.png" alt="" class="h-auto w-[55px] shrink-0 object-contain" />
+                </span>
+                <span class="feature-title">Payroll (Payroll, Compliance and Governance)</span>
+                <span class="feature-icon">+</span>
+              </button>
+              <div class="feature-content">
+                Manage payroll, compliance and governance requirements through
+                streamlined and structured processes.
+              </div>
+            </div>
+
+            <!-- People Performance -->
+            <div class="feature-item">
+              <button type="button" class="feature-toggle" aria-expanded="false">
+                <span class="feature-symbol">
+                  <img src="assets/people_icon.png" alt="" class="h-auto w-[55px] shrink-0 object-contain" />
+                </span>
+                <span class="feature-title">People Performance - (Goal, Objectives, and Performance)</span>
+                <span class="feature-icon">+</span>
+              </button>
+              <div class="feature-content">
+                Set goals, objectives and performance expectations while keeping
+                employee performance management organized.
+              </div>
+            </div>
+
+            <!-- Learning -->
+            <div class="feature-item">
+              <button type="button" class="feature-toggle" aria-expanded="false">
+                <span class="feature-symbol">
+                  <img src="assets/ld_icon.png" alt="" class="h-auto w-[55px] shrink-0 object-contain" />
+                </span>
+                <span class="feature-title">Learning and Development (Talent Development and Growth)</span>
+                <span class="feature-icon">+</span>
+              </button>
+              <div class="feature-content">
+                Support talent development and employee growth through structured
+                learning and development initiatives.
+              </div>
+            </div>
+
+            <!-- HR Analytics -->
+            <div class="feature-item">
+              <button type="button" class="feature-toggle" aria-expanded="false">
+                <span class="feature-symbol">
+                  <img src="assets/taso_icon.png" alt="" class="h-auto w-[55px] shrink-0 object-contain" />
+                </span>
+                <span class="feature-title">HR Analytics &amp; Strategy (Data Driven Decision Making)</span>
+                <span class="feature-icon">+</span>
+              </button>
+              <div class="feature-content">
+                Use HR analytics and strategy to support data-driven decision making
+                and better business outcomes.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section id="solutions"
+      class="bg-[var(--color-bg)] rounded-2xl section-card usp-section rounded-2xl px-6 py-9 sm:px-10 lg:px-[38px] lg:py-[52px]">
+      <!-- Section Label -->
+
+      <div
+        class="section-label modules-label mb-6 flex h-[36px] shrink-0 items-center justify-center gap-1 text-2xl font-medium text-sky-500">
+        <img src="assets/separator-left.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+
+        <span class="shrink-0 whitespace-nowrap">
+          USP, Easy and Problem Solver
+        </span>
+
+        <img src="assets/separator-right.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+      </div>
+
+      <!-- Main Content -->
+      <div class="usp-grid grid items-start gap-x-10 gap-y-0 lg:grid-cols-[1fr_1fr]">
+        <!-- ==============================================
+         LEFT CONTENT
+    =============================================== -->
+
+        <div class="pt-1">
+          <h2
+            class="max-w-[560px] text-[28px] font-medium leading-[1.12] tracking-tight text-[#354d60] sm:text-[32px] lg:text-[34px]">
+            Designed to Solve Real Business
+            <br />
+
+            Challenges While Making Everyday
+            <br />
+
+            Work Simpler
+          </h2>
+
+          <p class="mt-4 max-w-[470px] text-[15px] leading-[1.55] text-[#354d60]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+
+          <!-- Checklist -->
+          <div class="mt-7 space-y-4">
+            <!-- 1 -->
+            <div class="flex items-center gap-3">
+              <span
+                class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#2ccab5] text-[15px] font-bold text-white">
+                ✓
+              </span>
+
+              <span class="text-[15px] font-semibold text-[#354d60]">
+                Setup in Minutes
+              </span>
+            </div>
+
+            <!-- 2 -->
+            <div class="flex items-center gap-3">
+              <span
+                class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#2ccab5] text-[15px] font-bold text-white">
+                ✓
+              </span>
+
+              <span class="text-[15px] font-semibold text-[#354d60]">
+                Zero IT Overhead
+              </span>
+            </div>
+
+            <!-- 3 -->
+            <div class="flex items-center gap-3">
+              <span
+                class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#2ccab5] text-[15px] font-bold text-white">
+                ✓
+              </span>
+
+              <span class="text-[15px] font-semibold text-[#354d60]">
+                Autopilot Compliance
+              </span>
+            </div>
+
+            <!-- 4 -->
+            <div class="flex items-center gap-3">
+              <span
+                class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#2ccab5] text-[15px] font-bold text-white">
+                ✓
+              </span>
+
+              <span class="text-[15px] font-semibold text-[#354d60]">
+                Errorproof Workflows
+              </span>
+            </div>
+
+            <!-- 5 -->
+            <div class="flex items-center gap-3">
+              <span
+                class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#2ccab5] text-[15px] font-bold text-white">
+                ✓
+              </span>
+
+              <span class="text-[15px] font-semibold text-[#354d60]">
+                Push Button Reporting
+              </span>
+            </div>
+
+            <!-- 6 -->
+            <div class="flex items-center gap-3">
+              <span
+                class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#2ccab5] text-[15px] font-bold text-white">
+                ✓
+              </span>
+
+              <span class="text-[15px] font-semibold text-[#354d60]">
+                Very Minimal or Reduced Operation Cost
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+          RIGHT CONTENT
+    =============================================== -->
+
+        <div class="benefit-column relative">
+          <div id="benefitsCarousel" class="owl-carousel benefits-carousel">
+            <div class="item">
+              <article class="benefit-card">
+                <!-- Strategic -->
+                <img src="assets/strategic-benefits.svg" alt="Strategic Benefits" class="benefit-icon">
+                <h3>Improved Operational Efficiency</h3>
+                <p>
+                 Streamlined workflows reduce repetitive work and improve team coordination. Complete everyday tasks faster with significantly fewer manual steps
+                </p>
+              </article>
+            </div>
+
+            <div class="item">
+              <article class="benefit-card">
+                <!-- Efficiency -->
+                <img src="assets/operational-efficiency.svg" alt="Operational Efficiency" class="benefit-icon">
+                <h3>Better Employee Management</h3>
+                <p>
+                 Centralized information and structured workflows make people management simpler. Build a consistent foundation that scales easily as your business grows.
+                </p>
+              </article>
+            </div>
+
+            <div class="item">
+              <article class="benefit-card">
+                <!-- Cost -->
+                <img src="assets/reduced-cost.svg" alt="Reduced Operation Cost" class="benefit-icon">
+                <h3>Strategic Startup Benefits</h3>
+                <p>
+                 Strategic planning gives early-stage teams clear direction and stronger focus. Make faster, data-backed decisions while maximizing limited resources.
+                </p>
+              </article>
+            </div>
+
+            <div class="item">
+              <article class="benefit-card">
+                <!-- Employee -->
+                <img src="assets/employee-management.svg" alt="Employee Management" class="benefit-icon">
+                <h3>Reduced Operational Cost</h3>
+                <p>
+                Smart automation and simplified processes cut down unnecessary day-to-day effort. Eliminate backend waste and make better use of available capital.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="benefit-controls flex items-center justify-center gap-0">
+            <button id="benefitPrev" type="button" class="h-12 w-12 rounded-full p-0" aria-label="Previous benefit">
+              <img src="assets/Prev_normal.png" alt="Previous" class="h-full w-full object-contain" />
+            </button>
+
+            <button id="benefitNext" type="button" class="h-12 w-12 rounded-full p-0" aria-label="Next benefit">
+              <img src="assets/Next_normal.png" alt="Next" class="h-full w-full object-contain" />
+            </button>
+          </div>
+        </div>
+
+        <!-- ==============================================
+       STATISTICS
+  =============================================== -->
+
+        <div
+          class="usp-stats mt-8 grid grid-cols-2 rounded-2xl bg-[#f8f9ff] px-4 py-7 shadow-sm sm:grid-cols-4 sm:px-8 lg:col-span-2">
+          <!-- Corporate Users -->
+          <div
+            class="flex flex-col items-center justify-center border-b border-slate-200 px-3 py-3 text-center sm:border-b-0 sm:border-r">
+            <div class="stat-icon stat-icon-purple mb-2" aria-hidden="true">
+              <img src="assets/corporate-users.svg" alt="Corporate Users">
+            </div>
+
+            <div class="stat-number text-[42px] font-light leading-none text-[#71889a]" data-target="100">
+              1
+            </div>
+
+            <div class="mt-2 text-[15px] font-medium text-[#354d60]">
+              No of Corporate Users
+            </div>
+          </div>
+
+          <!-- Students -->
+          <div
+            class="flex flex-col items-center justify-center border-b border-slate-200 px-3 py-3 text-center sm:border-b-0 sm:border-r">
+            <div class="stat-icon stat-icon-blue mb-2" aria-hidden="true">
+              <img src="assets/students.svg" alt="Students">
+
+            </div>
+
+            <div class="stat-number text-[42px] font-light leading-none text-[#71889a]" data-target="270">
+              1
+            </div>
+
+            <div class="mt-2 text-[15px] font-medium text-[#354d60]">
+              No of Students
+            </div>
+          </div>
+
+          <!-- Enterprises -->
+          <div class="flex flex-col items-center justify-center px-3 py-3 text-center sm:border-r">
+            <div class="stat-icon stat-icon-teal mb-2" aria-hidden="true">
+              <img src="assets/enterprises.svg" alt="Enterprises">
+
+            </div>
+
+            <div class="stat-number text-[42px] font-light leading-none text-[#71889a]" data-target="2">
+              1
+            </div>
+
+            <div class="mt-2 text-[15px] font-medium text-[#354d60]">
+              No of Enterprises
+            </div>
+          </div>
+
+          <!-- Partners -->
+          <div class="flex flex-col items-center justify-center px-3 py-3 text-center">
+            <div class="stat-icon stat-icon-purple2 mb-2" aria-hidden="true">
+              <img src="assets/partners.svg" alt="Partners">
+            </div>
+
+            <div class="stat-number text-[42px] font-light leading-none text-[#71889a]" data-target="2">
+              1
+            </div>
+
+            <div class="mt-2 text-[15px] font-medium text-[#354d60]">
+              Partners
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="clients"
+      class="bg-[var(--color-bg)] rounded-2xl section-card clients-section rounded-2xl px-6 py-8 sm:px-10 lg:px-11 lg:py-9">
+
+
+      <div
+        class="section-label modules-label mb-6 flex h-[36px] shrink-0 items-center justify-center gap-1 text-2xl font-medium text-sky-500">
+        <img src="assets/separator-left.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+
+        <span class="shrink-0 whitespace-nowrap">
+          Client Speak
+        </span>
+
+        <img src="assets/separator-right.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+      </div>
+
+
+      <div class="clients-heading mb-5 flex items-center justify-between gap-4">
+        <h2 class="text-2xl font-medium sm:text-3xl">
+          Real stories and success from our valued clients.
+        </h2>
+
+        <div class="clients-controls flex shrink-0 gap-0">
+
+          <!-- Previous -->
+          <button id="prevBtn" type="button" class=" h-12 w-12 p-0" aria-label="Previous testimonial">
+            <img src="assets/Prev_normal.png" alt="Previous" class="h-full w-full object-contain" />
+          </button>
+
+          <!-- Next -->
+          <button id="nextBtn" type="button" class=" h-12 w-12 p-0" aria-label="Next testimonial">
+            <img src="assets/Next_normal.png" alt="Next" class="h-full w-full object-contain" />
+          </button>
+
+        </div>
+      </div>
+
+      <div id="testimonialCarousel" class="owl-carousel testimonial-carousel">
+        <article class="testimonial-slide">
+          <div class="testimonial-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=90"
+              alt="Client testimonial" class="testimonial-photo" />
+          </div>
+          <div class="testimonial-content">
+            <h3>Kevin Johnson - SEO Manager</h3>
+            <p class="testimonial-company">The Purposeful Culture Group</p>
+            <p class="testimonial-text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever type sheets. Lorem Ipsum is simply dummy text of the printing
+              and typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever type sheets.
+            </p>
+          </div>
+        </article>
+
+        <article class="testimonial-slide">
+          <div class="testimonial-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=900&q=90"
+              alt="Client testimonial" class="testimonial-photo" />
+          </div>
+          <div class="testimonial-content">
+            <h3>Sarah Miller - HR Director</h3>
+            <p class="testimonial-company">People First Solutions</p>
+            <p class="testimonial-text">
+              A simple, centralized experience helps our teams spend less time on
+              administration and more time creating meaningful employee
+              experiences. The streamlined workflows make everyday work easier.
+            </p>
+          </div>
+        </article>
+
+        <article class="testimonial-slide">
+          <div class="testimonial-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=90"
+              alt="Client testimonial" class="testimonial-photo" />
+          </div>
+          <div class="testimonial-content">
+            <h3>David Wilson - Operations Lead</h3>
+            <p class="testimonial-company">Smart Business Group</p>
+            <p class="testimonial-text">
+              The workflows are straightforward, reporting is easy to access, and
+              the overall platform gives our organization a much cleaner operating
+              model with less repetitive work.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Thoughts from Industry Veterans -->
+    <section id="veterans"
+      class="bg-[var(--color-bg)] rounded-2xl veterans-section section-card rounded-2xl px-6 py-8 sm:px-10 lg:px-11 lg:py-9">
+
+
+      <div
+        class="section-label modules-label mb-6 flex h-[36px] shrink-0 items-center justify-center gap-1 text-2xl font-medium text-sky-500">
+        <img src="assets/separator-left.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+
+        <span class="shrink-0 whitespace-nowrap">
+          Thoughts from industry veterans
+        </span>
+
+        <img src="assets/separator-right.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+      </div>
+
+
+      <div class="veterans-carousel-wrap">
+        <div id="veteransCarousel" class="owl-carousel veterans-carousel">
+          <div class="item">
+            <article class="veteran-card">
+              <div class="veteran-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=85"
+                  alt="Kenny Su" class="veteran-photo" />
+              </div>
+              <div class="veteran-content mt-5">
+                <h3>Kenny Su</h3>
+                <p class="veteran-company">KdanMobile</p>
+                <p class="veteran-text">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever type sheets. Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="item">
+            <article class="veteran-card">
+              <div class="veteran-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85"
+                  alt="Industry veteran" class="veteran-photo" />
+              </div>
+              <div class="veteran-content mt-5">
+                <h3>Kenny Su</h3>
+                <p class="veteran-company">KdanMobile</p>
+                <p class="veteran-text">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever type sheets. Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="item">
+            <article class="veteran-card">
+              <div class="veteran-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=85"
+                  alt="Industry veteran" class="veteran-photo" />
+              </div>
+              <div class="veteran-content mt-5">
+                <h3>Michael Chen</h3>
+                <p class="veteran-company">KdanMobile</p>
+                <p class="veteran-text">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever type sheets. Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="veteran-controls flex items-center justify-center gap-0">
+
+
+        <button id="veteranPrev" type="button" class="h-12 w-12 rounded-full p-0"
+          aria-label="Previous industry veteran"> <img src="assets/Prev_normal.png" alt="Previous"
+            class="h-full w-full object-contain" /></button>
+        <button id="veteranNext" type="button" class="h-12 w-12 rounded-full p-0" aria-label="Next industry veteran">
+          <img src="assets/Next_normal.png" alt="Next" class="h-full w-full object-contain" /></button>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     SALES CONTACT
+========================================================= -->
+    <section id="sales-contact"
+      class="bg-[var(--color-bg)] sales-contact section-card rounded-2xl px-6 py-10 sm:px-10 lg:px-11 lg:py-12">
+      <!-- Section Label -->
+
+      <div
+        class="section-label modules-label mb-6 flex h-[36px] shrink-0 items-center justify-center gap-1 text-2xl font-medium text-sky-500">
+        <img src="assets/separator-left.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+        <span class="shrink-0 whitespace-nowrap">
+          Talk to a member of our sales team
+        </span>
+
+        <img src="assets/separator-right.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+      </div>
+
+
+      <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <!-- LEFT CONTENT -->
+        <div>
+          <h2 class="text-[30px] font-medium leading-tight text-[#354d60] sm:text-[35px]">
+            Connect with a sales representative
+          </h2>
+
+          <p class="mt-2 max-w-[650px] text-[16px] leading-[1.55] text-[#354d60]">
+            Need to get in touch with the team? We’re all ears. Schedule a
+            call with our team to learn how we can help.
+          </p>
+
+          <a href="contact.html"
+            class="sales-call-button mt-10 inline-flex items-center rounded-md bg-gradient-to-r from-[#6349f5] to-[#0ecbe0] px-7 py-4 text-[16px] font-bold text-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            Call us: +91 8484869648
+          </a>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="sales-image-wrap relative mx-auto w-full max-w-[470px]">
+          <!-- Offset background -->
+          <div class="sales-image-backdrop"></div>
+
+          <img src="assets/contact.jpg" alt="WorkenLive - Life Simplified" alt="Contact sales representative"
+            class="sales-image relative z-10 h-[280px] w-full rounded-2xl object-cover sm:h-[300px]" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white section-card rounded-2xl px-6 py-7 sm:px-10">
+      <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-5">
+        <div>
+          <h4 class="text-xl font-bold uppercase">Quick Links</h4>
+          <div class="mt-3 space-y-1.5 text-[16px] text-slate-500">
+            <a class="block hover:text-purple-500" href="index.html">Home</a>
+            <a class="block hover:text-purple-500" href="wel-enterprise.html">WEL Enterprise</a>
+            <a class="block hover:text-purple-500" href="wel-connect.html">WEL Connect</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold uppercase">Resources</h4>
+          <div class="mt-3 space-y-1.5 text-[16px] text-slate-500">
+            <a class="block hover:text-purple-500" href="#">Infrastructure &amp; Privacy</a>
+            <a class="block hover:text-purple-500" href="#">Support</a>
+            <a class="block hover:text-purple-500" href="#">Templates</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold uppercase">Community</h4>
+          <div class="mt-3 space-y-1.5 text-[16px] text-slate-500">
+            <a class="block hover:text-purple-500" href="blogs.html">Blogs</a>
+            <a class="block hover:text-purple-500" href="#">Forum</a>
+            <a class="block hover:text-purple-500" href="#">News</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold uppercase">Company</h4>
+          <div class="mt-3 space-y-1.5 text-[16px] text-slate-500">
+            <a class="block hover:text-purple-500" href="#">About WorkenLive</a>
+            <a class="block hover:text-purple-500" href="#">Careers</a>
+            <a class="block hover:text-purple-500" href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <a href="https://www.google.com/maps/place/Varthur/@12.9552613,77.4105845,11z/data=!4m16!1m8!3m7!1s0x3bae0d87e1091cd9:0xf99fbc637054981f!2sVarthur,+Bengaluru,+Karnataka!3b1!8m2!3d12.938265!4d77.7468954!16s%2Fm%2F03qlj95!3m6!1s0x3bae130010184b6d:0x81f731cfd6cfe61b!8m2!3d12.9143245!4d77.7104645!15sCh1WYXJ0aHVyLCBCYW5nYWxvcmUsIEtBIDU2MDAzNZIBEmFwYXJ0bWVudF9idWlsZGluZ-ABAA!16s%2Fg%2F11x39wjxck?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank" rel="noopener noreferrer" class="block cursor-pointer"
+            aria-label="Open Varthur location in Google Maps">
+            <h4 class="text-xs font-extrabold uppercase">Locate Us</h4>
+            <div class="mt-3 overflow-hidden rounded-xl bg-slate-100">
+              <div class="relative h-28">
+                <div
+                  class="absolute inset-0 bg-[linear-gradient(25deg,transparent_47%,#d1d8e5_48%,#d1d8e5_51%,transparent_52%),linear-gradient(110deg,transparent_43%,#d8deea_44%,#d8deea_47%,transparent_48%)]">
+                </div>
+                <div
+                  class="absolute left-1/2 top-1/2 grid h-7 w-7 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-red-500 text-xs text-white shadow">
+                  ●
+                </div>
+                <div class="absolute bottom-2 left-3 text-[9px] font-bold text-slate-500">
+                  Yarthur
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="mt-6 flex flex-col gap-3 font-normal border-t border-slate-200 pt-4 text-[14px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <span>Copyright © 2026. All Rights Reserved by WorkenLive Team</span>
+        <span>Terms and Conditions · Privacy · Support</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEL — Life Simplified</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wel: {
+              cyan: "#27c9d9",
+              blue: "#1586e8",
+              purple: "#7448ed",
+              ink: "#30445b",
+              pale: "#f4f7ff",
+            },
+          },
+          boxShadow: {
+            card: "0 14px 35px rgba(92, 112, 170, .16)",
+            soft: "0 8px 25px rgba(95, 115, 175, .13)",
+          },
+          fontFamily: {
+            outfit: ["Outfit", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+</head>
+
+<body class="min-h-screen">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 h-[85px] border-b border-slate-200/70 bg-white">
+    <div class="mx-auto flex h-full max-w-[1200px] items-center px-5 lg:px-0">
+      <!-- Logo -->
+      <a href="index.html" class="flex shrink-0 items-center">
+        <img src="assets/Logo_top.png" alt="WorkenLive - Life Simplified" class="w-[190px] object-contain" />
+      </a>
+
+      <!-- Navigation -->
+      <nav class="ml-[115px] hidden items-center gap-[55px] md:flex">
+        <!-- Product -->
+        <div class="group relative">
+          <button type="button"
+            class="flex items-center gap-2 py-7 text-[13px] font-bold uppercase tracking-wide text-slate-700 transition hover:text-purple-600">
+            Product
+
+            <span class="text-[12px] transition-transform duration-200 group-hover:rotate-180">
+              <img src="assets/dropdown_arrow.png" alt="Arrow" class="w-[18px] object-contain" />
+
+            </span>
+          </button>
+
+          <!-- Product Dropdown -->
+          <div
+            class="invisible absolute left-0 top-[68px] w-48 translate-y-2 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <a href="wel-enterprise.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Wel Enterprise
+            </a>
+
+            <a href="wel-connect.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Wel Connect
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="group relative">
+          <button type="button"
+            class="flex items-center gap-2 py-7 text-[13px] font-bold uppercase tracking-wide text-slate-700 transition hover:text-purple-600">
+            Services
+
+            <span class="text-[12px] transition-transform duration-200 group-hover:rotate-180">
+              <img src="assets/dropdown_arrow.png" alt="Arrow" class="w-[18px] object-contain" />
+            </span>
+          </button>
+
+          <!-- Services Dropdown -->
+          <div
+            class="invisible absolute left-0 top-[68px] w-48 translate-y-2 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <a href="consulting.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Consulting
+            </a>
+
+            <a href="automation.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Automation
+            </a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="group relative">
+          <button type="button"
+            class="flex items-center gap-2 py-7 text-[13px] font-bold uppercase tracking-wide text-slate-700 transition hover:text-purple-600">
+            Resources
+
+            <span class="text-[12px] transition-transform duration-200 group-hover:rotate-180">
+              <img src="assets/dropdown_arrow.png" alt="Arrow" class="w-[18px] object-contain" />
+            </span>
+          </button>
+
+          <!-- Resources Dropdown -->
+          <div
+            class="invisible absolute left-0 top-[68px] w-48 translate-y-2 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <a href="blogs.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Blogs
+            </a>
+
+            <a href="case-study.html"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Case Study
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right side -->
+      <div class="ml-auto flex items-center">
+        <!-- Login -->
+        <!-- Login Dropdown -->
+        <div class="group relative">
+          <button id="loginBtn" type="button"
+            class="rounded-md bg-gradient-to-r from-[#6349f5] to-[#0ecbe0] px-[42px] py-[14px] text-[12px] font-bold uppercase tracking-wide text-white shadow-sm">
+            Login
+          </button>
+
+          <!-- Login Dropdown -->
+          <div
+            class="invisible absolute right-0 top-[55px] w-52 translate-y-2 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <a href="#""
+             onclick=" alert('Coming Soon!'); return false;"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Enterprise Login
+            </a>
+
+            <a href="https://welconnect.workenlive.me/account/login" target="_blank"
+              class="block rounded-lg px-4 py-3 text-[16px] font-medium text-slate-600 transition hover:bg-slate-50 hover:text-purple-600">
+              Individual Login
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <button id="menuBtn" type="button" class="ml-3 rounded-lg border border-slate-200 p-2 text-slate-600 md:hidden"
+          aria-label="Open menu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden border-t border-slate-100 bg-white px-5 py-4 md:hidden">
+      <!-- Product -->
+      <div class="mobile-dropdown">
+        <input type="checkbox" id="mobileProduct" class="mobile-dropdown-check" />
+
+        <label for="mobileProduct" class="mobile-dropdown-label">
+          <span>Product</span>
+          <img src="assets/dropdown_arrow.png" alt="" class="mobile-dropdown-arrow" />
+        </label>
+        <div class="mobile-dropdown-content">
+          <a href="wel-enterprise.html">
+            Wel enterprise
+          </a>
+          <a href="wel-connect.html">
+            Wel Connect
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Services -->
+      <div class="mobile-dropdown">
+        <input type="checkbox" id="mobileServices" class="mobile-dropdown-check" />
+
+        <label for="mobileServices" class="mobile-dropdown-label">
+          <span>Services</span>
+
+          <img src="assets/dropdown_arrow.png" alt="" class="mobile-dropdown-arrow" />
+        </label>
+
+        <div class="mobile-dropdown-content">
+          <a href="consulting.html">
+            Consulting
+          </a>
+
+          <a href="automation.html">
+            Automation
+          </a>
+        </div>
+      </div>
+
+      <!-- Resources -->
+      <div class="mobile-dropdown">
+        <input type="checkbox" id="mobileResources" class="mobile-dropdown-check" />
+
+        <label for="mobileResources" class="mobile-dropdown-label">
+          <span>Resources</span>
+
+          <img src="assets/dropdown_arrow.png" alt="" class="mobile-dropdown-arrow" />
+        </label>
+
+        <div class="mobile-dropdown-content">
+          <a href="blogs.html">
+            Blogs
+          </a>
+
+          <a href="case-study.html">
+            Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="breadcrumb">
+      <a href="index.html">BACK TO HOME</a>
+      <span>/</span>
+      <a href="#">PRODUCT</a>
+      <span>/</span>
+      <span>WEL ENTERPRISE</span>
+    </div>
+  </div>
+
+  <main class="mx-auto max-w-[1300px] space-y-6 px-4 py-5 sm:px-6 lg:px-0 lg:py-7">
+
+
+    <section class="hero-banner">
+      <div class="hero-content">
+
+        <!-- Dynamic Left Content -->
+        <div class="hero-text">
+          <h1>
+            <span class="text-gradient">WorkenLive for</span>
+            <span>Enterprise</span>
+          </h1>
+
+          <p>
+            WorkenLive Enterprise is a unified digital people platform that streamlines operations, automates workflows,
+            and unifies people management, payroll, and compliance in one smart hub. Designed for modern hybrid teams
+            using solutions like Zen G, it cuts admin work and boosts productivity so you can focus on growth
+          </p>
+        </div>
+
+
+
+        <!-- Right Image -->
+        <div class="hero-image">
+          <img src="assets/workenlive-hero.png" alt="WorkenLive workforce management" />
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="main-hero-banner">
+      <div class="main-hero-content">
+
+        <div class="enterprise-two-column">
+
+          <!-- LEFT: Why WorkenLive Enterprise -->
+          <div class="enterprise-column">
+            <h1>
+              <span class="text-gradient">Why WorkenLive</span>
+              <span>Enterprise?</span>
+            </h1>
+
+            <ul class="space-y-4 mt-5">
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7048F5]"></span>
+                <span>
+                  <strong>All-In-One Hub:</strong>
+                  Manage people data, attendance, and leave in a single dashboard.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#168FE8]"></span>
+                <span>
+                  <strong>Smart Automation:</strong>
+                  Run error-free payroll and stay compliant without manual stress.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#08C6D8]"></span>
+                <span>
+                  <strong>Deep Insights:</strong>
+                  Get clear reports to make fast, smart workforce choices.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7048F5]"></span>
+                <span>
+                  <strong>Zen G Ready:</strong>
+                  Sync seamlessly with modern enterprise tools for smooth daily routines.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+
+          <!-- RIGHT: Key Features -->
+          <div class="enterprise-column">
+            <h1>
+              <span class="text-gradient">Key Features</span>
+            </h1>
+
+            <ul class="space-y-4 mt-5">
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7048F5]"></span>
+                <span>
+                  Talent Pool and Smart Onboarding
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#168FE8]"></span>
+                <span>
+                  Employee Essential HR: Keep employee records safe and organized in one place.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#08C6D8]"></span>
+                <span>
+                  Time &amp; Attendance: Track work hours, shifts, and leaves with ease.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7048F5]"></span>
+                <span>
+                  Automated Payroll: Pay your team on time with built-in tax and compliance checks.
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7048F5]"></span>
+                <span>
+                  People Performance, Development, and Succession
+                </span>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#7048F5]"></span>
+                <span>
+                  Workflow Tools: Build custom approval paths for faster team operations.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Thoughts from Industry Veterans -->
+    <section id="veterans"
+      class="bg-[var(--color-bg)] rounded-2xl veterans-section section-card rounded-2xl px-6 py-8 sm:px-10 lg:px-11 lg:py-9">
+
+
+      <div
+        class="section-label modules-label mb-6 flex h-[36px] shrink-0 items-center justify-center gap-1 text-2xl font-medium text-sky-500">
+        <img src="assets/separator-left.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+
+        <span class="shrink-0 whitespace-nowrap">
+          Wel Enterprise
+        </span>
+
+        <img src="assets/separator-right.png" alt="" class="h-auto w-[120px] shrink-0 object-contain" />
+      </div>
+
+
+      <div class="veterans-carousel-wrap">
+        <div id="veteransCarousel" class="owl-carousel veterans-carousel">
+          <div class="item">
+            <article class="veteran-card">
+              <div class="veteran-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=85"
+                  alt="Kenny Su" class="veteran-photo" />
+              </div>
+              <div class="veteran-content mt-5">
+                <h3>Kenny Su</h3>
+                <p class="veteran-company">KdanMobile</p>
+                <p class="veteran-text">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever type sheets. Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="item">
+            <article class="veteran-card">
+              <div class="veteran-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85"
+                  alt="Industry veteran" class="veteran-photo" />
+              </div>
+              <div class="veteran-content mt-5">
+                <h3>Kenny Su</h3>
+                <p class="veteran-company">KdanMobile</p>
+                <p class="veteran-text">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever type sheets. Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="item">
+            <article class="veteran-card">
+              <div class="veteran-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=85"
+                  alt="Industry veteran" class="veteran-photo" />
+              </div>
+              <div class="veteran-content mt-5">
+                <h3>Michael Chen</h3>
+                <p class="veteran-company">KdanMobile</p>
+                <p class="veteran-text">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever type sheets. Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="veteran-controls flex items-center justify-center gap-0">
+
+
+        <button id="veteranPrev" type="button" class="h-12 w-12 rounded-full p-0"
+          aria-label="Previous industry veteran"> <img src="assets/Prev_normal.png" alt="Previous"
+            class="h-full w-full object-contain" /></button>
+        <button id="veteranNext" type="button" class="h-12 w-12 rounded-full p-0" aria-label="Next industry veteran">
+          <img src="assets/Next_normal.png" alt="Next" class="h-full w-full object-contain" /></button>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-white section-card rounded-2xl px-6 py-7 sm:px-10">
+      <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-5">
+        <div>
+          <h4 class="text-xl font-bold uppercase">Quick Links</h4>
+          <div class="mt-3 space-y-1.5 text-[16px] text-slate-500">
+            <a class="block hover:text-purple-500" href="index.html">Home</a>
+            <a class="block hover:text-purple-500" href="wel-enterprise.html">WEL Enterprise</a>
+            <a class="block hover:text-purple-500" href="wel-connect.html">WEL Connect</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold uppercase">Resources</h4>
+          <div class="mt-3 space-y-1.5 text-[16px] text-slate-500">
+            <a class="block hover:text-purple-500" href="#">Infrastructure &amp; Privacy</a>
+            <a class="block hover:text-purple-500" href="#">Support</a>
+            <a class="block hover:text-purple-500" href="#">Templates</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold uppercase">Community</h4>
+          <div class="mt-3 space-y-1.5 text-[16px] text-slate-500">
+            <a class="block hover:text-purple-500" href="blogs.html">Blogs</a>
+            <a class="block hover:text-purple-500" href="#">Forum</a>
+            <a class="block hover:text-purple-500" href="#">News</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold uppercase">Company</h4>
+          <div class="mt-3 space-y-1.5 text-[16px] text-slate-500">
+            <a class="block hover:text-purple-500" href="#">About WorkenLive</a>
+            <a class="block hover:text-purple-500" href="#">Careers</a>
+            <a class="block hover:text-purple-500" href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <a href="https://www.google.com/maps/place/Varthur/@12.9552613,77.4105845,11z/data=!4m16!1m8!3m7!1s0x3bae0d87e1091cd9:0xf99fbc637054981f!2sVarthur,+Bengaluru,+Karnataka!3b1!8m2!3d12.938265!4d77.7468954!16s%2Fm%2F03qlj95!3m6!1s0x3bae130010184b6d:0x81f731cfd6cfe61b!8m2!3d12.9143245!4d77.7104645!15sCh1WYXJ0aHVyLCBCYW5nYWxvcmUsIEtBIDU2MDAzNZIBEmFwYXJ0bWVudF9idWlsZGluZ-ABAA!16s%2Fg%2F11x39wjxck?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank" rel="noopener noreferrer" class="block cursor-pointer"
+            aria-label="Open Varthur location in Google Maps">
+            <h4 class="text-xs font-extrabold uppercase">Locate Us</h4>
+            <div class="mt-3 overflow-hidden rounded-xl bg-slate-100">
+              <div class="relative h-28">
+                <div
+                  class="absolute inset-0 bg-[linear-gradient(25deg,transparent_47%,#d1d8e5_48%,#d1d8e5_51%,transparent_52%),linear-gradient(110deg,transparent_43%,#d8deea_44%,#d8deea_47%,transparent_48%)]">
+                </div>
+                <div
+                  class="absolute left-1/2 top-1/2 grid h-7 w-7 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-red-500 text-xs text-white shadow">
+                  ●
+                </div>
+                <div class="absolute bottom-2 left-3 text-[9px] font-bold text-slate-500">
+                  Yarthur
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="mt-6 flex flex-col gap-3 font-normal border-t border-slate-200 pt-4 text-[14px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <span>Copyright © 2026. All Rights Reserved by WorkenLive Team</span>
+        <span>Terms and Conditions · Privacy · Support</span>
+      </div>
+    </footer>
+  </main>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
