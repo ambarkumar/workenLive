@@ -213,6 +213,8 @@ const modalBlogDate = document.getElementById("modalBlogDate");
 const modalBlogTitle = document.getElementById("modalBlogTitle");
 const modalBlogDescription = document.getElementById("modalBlogDescription");
 
+let scrollPosition = 0;
+
 document.querySelectorAll(".blog-arrow").forEach((arrow) => {
   arrow.addEventListener("click", (event) => {
     event.preventDefault();
@@ -221,7 +223,13 @@ document.querySelectorAll(".blog-arrow").forEach((arrow) => {
     modalBlogImage.alt = arrow.dataset.blogTitle;
     modalBlogDate.textContent = arrow.dataset.blogDate;
     modalBlogTitle.textContent = arrow.dataset.blogTitle;
-    modalBlogDescription.textContent = arrow.dataset.blogDescription;
+    modalBlogDescription.innerHTML = arrow.dataset.blogDescription;
+
+    /* Lock window scroll */
+    scrollPosition = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = "100%";
 
     blogModal.classList.add("active");
   });
@@ -229,6 +237,12 @@ document.querySelectorAll(".blog-arrow").forEach((arrow) => {
 
 function closeBlogModal() {
   blogModal.classList.remove("active");
+
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+
+  window.scrollTo(0, scrollPosition);
 }
 
 if (blogModalClose) {
